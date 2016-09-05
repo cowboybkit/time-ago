@@ -36,7 +36,11 @@ var timeago = function() {
 
   obj.timefriendly = function(s) {
     var t = s.match(/(\d).([a-z]*?)s?$/);
-    return t[1] * eval(o[t[2]]);
+    if(t){
+      return t[1] * eval(o[t[2]]);
+    }else{
+      return null;
+    }
   }
 
   obj.mintoread = function(text, altcmt, wpm) {
